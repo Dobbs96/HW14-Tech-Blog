@@ -19,9 +19,9 @@ For more information please check [GitHub Licensing](https://docs.github.com/en/
 
 ## Tests
 
-![How to start Video](./assets/Getting_Started.gif)
+![How to start Video]()
 
-[Click here](https://drive.google.com/file/d/1Brsu3aSgy5UyfeCFNjNDTYfUPhGARyuJ/view) for full video.
+[Click here]() for full video.
 Download for best Quality!
 
 ## Usage
