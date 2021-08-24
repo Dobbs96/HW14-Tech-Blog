@@ -1,0 +1,32 @@
+* {
+  margin: auto;
+  text-align: center;
+}
+body {
+  background-color: rgb(235, 235, 235);
+}
+
+input#email-login,
+input#password-login,
+input#username-signup,
+input#email-signup,
+input#password-signup {
+  width: 50%;
+  margin: auto;
+}
+
+a.btn.btn-outline-primary.post {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 10rem;
+}
+
+.form-group {
+  width: 75%;
+}
+
+input#title {
+  width: 33%;
+  margin: auto;
+}
