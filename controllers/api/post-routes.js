@@ -66,11 +66,11 @@ router.get("/:id", async (req, res) => {
 });
 
 // POST /api/posts
-router.post("/", async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
   const dbPostData = await Post.create({
     title: req.body.title,
     post: req.body.post,
-    user_id: req.body.user_id,
+    user_id: req.session.user_id,
   }).catch((err) => {
     console.log(err);
     res.status(500).json(err);
@@ -79,7 +79,7 @@ router.post("/", async (req, res) => {
 });
 
 // PUT /api/posts/:id
-router.put("/:id", async (req, res) => {
+router.put("/:id", withAuth, async (req, res) => {
   const dbPostData = await Post.update(
     {
       title: req.body.title,
@@ -103,7 +103,7 @@ router.put("/:id", async (req, res) => {
 
 // DELETE /api/posts/:id
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", withAuth, async (req, res) => {
   const dbPostData = await Post.destroy({
     where: {
       id: req.params.id,

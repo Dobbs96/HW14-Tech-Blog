@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { User, Post, Comment } = require("../../models");
+const withAuth = require("../../utils/loggedin");
 
 //GET /api/users
 
@@ -68,7 +69,7 @@ router.post("/", async (req, res) => {
 });
 
 // PUT /api/users/:id
-router.put("/:id", async (req, res) => {
+router.put("/:id", withAuth, async (req, res) => {
   const dbUserData = await User.update(req.body, {
     individualHooks: true,
     where: {
@@ -87,7 +88,7 @@ router.put("/:id", async (req, res) => {
 });
 
 // DELETE /api/users/:id
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", withAuth, async (req, res) => {
   const dbUserData = await User.destroy({
     where: {
       id: req.params.id,
@@ -104,6 +105,7 @@ router.delete("/:id", async (req, res) => {
   res.json({ message: `User Deleted by ID of ${req.params.id}` });
 });
 
+//LOGIN
 router.post("/login", (req, res) => {
   User.findOne({
     where: {

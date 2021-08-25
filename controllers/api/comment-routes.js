@@ -17,15 +17,17 @@ router.get("/", async (req, res) => {
 // POST /api/comments
 
 router.post("/", async (req, res) => {
-  const dbCommentData = await Comment.create({
-    comment: req.body.comment,
-    post_id: req.body.post_id,
-    user_id: req.body.user_id,
-  }).catch((err) => {
-    console.log(err);
-    res.status(400).json(err);
-  });
-  res.json(dbCommentData);
+  if (req.session) {
+    const dbCommentData = await Comment.create({
+      comment: req.body.comment,
+      post_id: req.body.post_id,
+      user_id: req.session.user_id,
+    }).catch((err) => {
+      console.log(err);
+      res.status(400).json(err);
+    });
+    res.json(dbCommentData);
+  }
 });
 
 // DELETE /api/comments
