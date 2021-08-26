@@ -4,10 +4,10 @@ const router = require("express").Router();
 
 router.get("/", (req, res) => {
   Post.findAll({
-    where: {
-      // use the ID from the session
-      user_id: req.session.user_id,
-    },
+    // where: {
+    //   // use the ID from the session
+    //   user_id: req.session.user_id,
+    // },
     attributes: ["id", "title", "created_at", "post"],
     include: [
       {

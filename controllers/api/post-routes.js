@@ -75,7 +75,7 @@ router.post("/", withAuth, async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   });
-  res.json(dbPostData);
+  return res.json(dbPostData);
 });
 
 // PUT /api/posts/:id
