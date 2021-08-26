@@ -19,9 +19,9 @@ For more information please check [GitHub Licensing](https://docs.github.com/en/
 
 ## Tests
 
-![How to start Video]()
+![How to start Video](./tour.gif)
 
-[Click here]() for full video.
+[Click here](https://drive.google.com/file/d/1DwDpmpajNxgZGrUfhCaOuDlAr_eg9zQH/view) for full video.
 Download for best Quality!
 
 ## Usage
